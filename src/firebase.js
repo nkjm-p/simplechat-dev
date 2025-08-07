@@ -1,7 +1,10 @@
-import firebase from "firebase/app";
-import "firebase/auth";  // Authentication用
-import "firebase/firestore";  // Firestore用
+import {initializeApp} from 'firebase/app';
+import { getAuth } from "firebase/auth";
+// import "firebase/firestore";  // Firestore用
 
+//// const(instance) ////
+
+// Firebase SDKの関数をv9モジュール方式でインポート
 const firebaseConfig = {
   apiKey: "AIzaSyBFz7M5oHcjob2wn5DDFH4Ws7AX2grSP0Y",
   authDomain: "simplechat-dev-ea08d.firebaseapp.com",
@@ -12,9 +15,16 @@ const firebaseConfig = {
   measurementId: "G-BQW7FERNM8"
 };
 
-// Firebase初期化
-const firebaseApp = firebase.initializeApp(firebaseConfig);
+// Firebaseアプリの初期化
+const firebaseApp = initializeApp(firebaseConfig);
 
-export const auth = firebase.auth();
-export const firestore = firebase.firestore();
-export default firebaseApp;
+// authインスタンス化
+const auth = getAuth(firebaseApp)
+
+
+
+//// export ////
+
+// auth
+export {auth};
+
