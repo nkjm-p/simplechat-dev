@@ -1,9 +1,17 @@
 // src/AuthService.js
 import React, { useState } from 'react';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,  // サインアウト機能
+  onAuthStateChanged  //ログイン状態の監視機能
+} from 'firebase/auth';
 import { auth } from './firebase'; // firebase.js で export した auth をインポート
 
+
+// 認証機能関数
 function AuthService() {
+
   // ReactのuseStateに含まれる各変数の値を初期化・定義
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -22,6 +30,7 @@ function AuthService() {
     }
   };
 
+  // ログイン機能関数
   const handleLogin = async () => {
     try {
       // サインインが完了するまで待機
@@ -34,28 +43,28 @@ function AuthService() {
 
 
   // AuthService.jsを実行した際に返される処理と値
-  return (
-    <div>
-      <h2>Authテスト画面</h2>
-      <input
-        type="email"
-        placeholder="メールアドレス"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <br />
-      <input
-        type="password"
-        placeholder="パスワード"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <br />
-      <button onClick={handleSignUp}>サインアップ</button>
-      <button onClick={handleLogin}>ログイン</button>
-      <p>{message}</p>
-    </div>
-  );
+  // return (
+  //   <div>
+  //     <h2>Authテスト画面</h2>
+  //     <input
+  //       type="email"
+  //       placeholder="メールアドレス"
+  //       value={email}
+  //       onChange={(e) => setEmail(e.target.value)}
+  //     />
+  //     <br />
+  //     <input
+  //       type="password"
+  //       placeholder="パスワード"
+  //       value={password}
+  //       onChange={(e) => setPassword(e.target.value)}
+  //     />
+  //     <br />
+  //     <button onClick={handleSignUp}>サインアップ</button>
+  //     <button onClick={handleLogin}>ログイン</button>
+  //     <p>{message}</p>
+  //   </div>
+  // );
 }
 
 export default AuthService;

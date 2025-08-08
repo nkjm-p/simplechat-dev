@@ -6,9 +6,31 @@ import './App.css';
 function App() {
   // テスト用
   return (
-    <div className="App">
-      <h1>Firebase Auth 動作確認</h1>
-      <AuthService />
+    <div>
+
+      <h2>Authテスト画面</h2>
+      <input
+        type="email"
+        placeholder="メールアドレス"
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+      />
+
+      <br />
+
+      <input
+        type="password"
+        placeholder="パスワード"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+
+      <br />
+
+      <button onClick={handleSignUp}>サインアップ</button>
+      <button onClick={handleLogin}>ログイン</button>
+      <p>{message}</p>
+      
     </div>
   );
 
