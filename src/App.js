@@ -1,7 +1,18 @@
 import logo from './logo.svg';
+import React from 'react';
+import AuthTest from './authTest';
 import './App.css';
 
 function App() {
+  // テスト用
+  return (
+    <div className="App">
+      <h1>Firebase Auth 動作確認</h1>
+      <AuthTest />
+    </div>
+  );
+
+  /*
   return (
     <div className="App">
       <header className="App-header">
@@ -20,6 +31,7 @@ function App() {
       </header>
     </div>
   );
+  */
 }
 
 export default App;
