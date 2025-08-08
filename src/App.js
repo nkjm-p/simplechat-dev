@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import React from 'react';
-import AuthService from './AuthService.js';
+import AuthService from './AuthService';
 import './App.css';
 
 function App() {
