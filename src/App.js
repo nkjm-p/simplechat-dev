@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import React from 'react';
-import authService from './authService';
+import AuthService from './AuthService.js';
 import './App.css';
 
 function App() {
@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="App">
       <h1>Firebase Auth 動作確認</h1>
-      <authService />
+      <AuthService />
     </div>
   );
 
