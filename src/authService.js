@@ -60,4 +60,4 @@ export const observeAuthState = (callback) => {
 // };
 
 
-export default AuthService;
+// export default AuthService;

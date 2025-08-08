@@ -1,6 +1,6 @@
 import logo from './logo.svg';
-import React from 'react';
-import AuthService from './AuthService';
+import React, { useState, useEffect } from 'react';
+import {signUp, login, logout, observeAuthState} from './AuthService';
 import './App.css';
 
 function App() {
